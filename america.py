@@ -18,6 +18,8 @@ class Application (Frame):
 
 
 
+
+
 root = Tk()
 root.title("America")
 root.geometry("1830x1080")
