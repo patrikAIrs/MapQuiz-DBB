@@ -7,14 +7,12 @@ class Application (Frame):
         self.create_widgets()
 
     def create_widgets(self):
-        
-        Label(self, text = "").grid(row = 0, column = 0)
-        Label(self, text = "").grid(row = 1, column = 1)
 
-        muricamap = PhotoImage(file = "AMERICANSTATES2")
+
+        muricamap = PhotoImage(file = "AMERICANSTATES2.png")
         w = Label(self, image = muricamap)
         w.photo = muricamap
-        w.grid(row = 4, column = 0, sticky = EW)
+        w.grid(row = 0, column = 0, sticky = NSEW)
 
 
 
@@ -22,7 +20,7 @@ class Application (Frame):
 
 root = Tk()
 root.title("America")
-root.geometry("600x600")
+root.geometry("1830x1080")
 
 app = Application(root)
 
