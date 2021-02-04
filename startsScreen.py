@@ -1,8 +1,8 @@
 from tkinter import *
 
-class Application (Frame):
+class StartingScreen (Frame):
     def __init__ (self, master):
-        super(Application, self).__init__(master)
+        super(StartingScreen, self).__init__(master)
         self.grid()
         self.create_widgets()
 
@@ -21,13 +21,6 @@ class Application (Frame):
 
 
 
-root = Tk()
-root.title("Map Quiz")
-root.geometry("400x200")
-
-app = Application(root)
-
-root.mainloop()
 
 
 
