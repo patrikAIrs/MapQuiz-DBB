@@ -15,8 +15,7 @@ class StartingScreen (Frame):
         self.mapbutton1.grid(row = 2, column = 2)
 
 
-    def destroy_mapbutton1(self):
-        self.mapbutton1.destroy()
+    
 
 
 
