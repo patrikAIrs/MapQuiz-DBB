@@ -17,16 +17,4 @@ class Country_roster (object):
             my_fields = line.split(",")
             country = Country_Object (my_fields[0], int(my_fields[1]))
             self.countries_list.append(country)
-
-    def print_roster(self):
-        print(self.countries_list)
-
-
-
-
-
-def main():
-    roster = Country_roster ("map_characteristics.txt")
-    roster.print_roster()
-
-main()
+    

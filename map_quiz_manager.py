@@ -1,7 +1,7 @@
 from tkinter import *
 
 from startsScreen import StartingScreen
-from map_countries import Country_roster
+from map_countries import Country_roster, Country_Object
 
 class MapQuizManager (object):
 
@@ -27,13 +27,18 @@ class MapQuizManager (object):
         self.root.title ("Quiz")
         selected_country_index = int (selected_country_index)
 
+        self.current_screen.destroy()
+
+        
+
+
 
 def main():
     map_game = MapQuizManager()
 
     map_game.setup_startScreen()
 
-    map_game.mainloop()
+    map_game.root.mainloop()
 
 main()
 
