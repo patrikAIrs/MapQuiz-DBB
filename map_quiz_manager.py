@@ -8,7 +8,7 @@ class MapQuizManager (object):
     def __init__ (self):
 
         self.root = Tk()
-        self.current_screen = None
+        self.current_screen = None  
         self.countries_roster = None
 
     def setup_startScreen (self):
