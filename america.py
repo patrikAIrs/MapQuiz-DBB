@@ -1,4 +1,5 @@
 from tkinter import *
+#from tkinter import ttk
 
 class Application (Frame):
     def __init__ (self, master):
@@ -8,7 +9,7 @@ class Application (Frame):
 
 
     def create_widgets(self):
-        acanvas = Canvas(parent, width = 500, height = 400, background = 'gray')
+        acanvas = Canvas(self, width = 500, height = 400, background = 'gray')
 
 
 
