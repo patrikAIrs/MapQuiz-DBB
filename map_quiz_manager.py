@@ -23,11 +23,15 @@ class MapQuizManager (object):
 
 
     def country_screen (self, selected_country_index):
+        
+        self.selected_country_index = selected_country_index
 
         self.root.title ("Quiz")
         selected_country_index = int (selected_country_index)
 
         self.current_screen.destroy()
+
+        print(self.selected_country_index)
 
         
 
