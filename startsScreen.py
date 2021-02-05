@@ -25,9 +25,9 @@ class StartingScreen (Frame):
                         value = x).grid(row = row, column = 0, sticky = W)
 
             Label(self, text = current_map.number_of_places, font = "Helvetica 20 bold").grid(row = row, column = 1, sticky = W)
+
+            row +=1
             
-            Label(self, text = current_map.number_of_places)
-            row += 1
 
         
         self.country_selected_button = Button(self, text = 'Country Selected!', fg = "Red", bg = "black", command = self.selected_clicked)
