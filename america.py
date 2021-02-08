@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 
+
 class Application (Frame):
     def __init__ (self, master):
         super(Application, self).__init__(master)
@@ -10,13 +11,18 @@ class Application (Frame):
 
     def create_widgets(self):
         acanvas = Canvas(self, width = 1830, height = 1080, background = 'gray')
-        acanvas.pack()
+        acanvas.pack(expand = YES, fill = BOTH)
 
-        map = PhotoImage(file = "AMERICANSTATES2.png")
-        acanvas.create_image(10,10, image = map, anchor = NW)
+        muricamap = PhotoImage(file = "AMERICANSTATES2.png")
+        amap = Label(acanvas, image = muricamap)
+        acanvas.create_window(0, 0, anchor='nw', window=amap)
 
         statename = Entry(acanvas)
         acanvas.create_window(1000,500, window =statename)
+
+        
+
+
 
 
 
