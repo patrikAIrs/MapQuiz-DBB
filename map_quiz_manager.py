@@ -3,7 +3,7 @@ from tkinter import *
 from startsScreen import StartingScreen
 from map_countries import Country_roster, Country_Object
 from europe import EuropeSketchpad
-from america import Application
+# from america import Application
 
 class MapQuizManager (object):
 
