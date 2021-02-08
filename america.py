@@ -1,5 +1,5 @@
 from tkinter import *
-#from tkinter import ttk
+from tkinter import ttk
 
 class Application (Frame):
     def __init__ (self, master):
@@ -9,9 +9,14 @@ class Application (Frame):
 
 
     def create_widgets(self):
-        acanvas = Canvas(self, width = 500, height = 400, background = 'gray')
+        acanvas = Canvas(self, width = 1830, height = 1080, background = 'gray')
+        acanvas.pack()
+
+        map = PhotoImage(file = "AMERICANSTATES2.png")
+        acanvas.create_image(10,10, image = map, anchor = NW)
+
         statename = Entry(acanvas)
-        acanvas.create_image(10,10, anchor ='nw')
+        acanvas.create_window(1000,500, window =statename)
 
 
 
