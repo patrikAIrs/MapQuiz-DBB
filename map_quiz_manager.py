@@ -3,6 +3,7 @@ from tkinter import *
 from startsScreen import StartingScreen
 from map_countries import Country_roster, Country_Object
 from europe import EuropeSketchpad
+from america import Application
 
 class MapQuizManager (object):
 
@@ -27,23 +28,22 @@ class MapQuizManager (object):
         
         self.selected_country_index = selected_country_index
 
-        self.root.title ("Quiz")
         selected_country_index = int (selected_country_index)
 
         self.current_screen.destroy()
 
         print(self.selected_country_index)
 
-        if self.selected_country_index == 0:
+        if self.selected_country_index == "0":
             pass
 
-        elif self.selected_country_index == 1:
-            pass
+        elif self.selected_country_index == "1":
+            self.root.title("Europe")
+            self.current_screen = EuropeSketchpad (master = self.root)
 
         else: 
             pass
 
-        self.current_screen = EuropeSketchpad(Canvas)
 
         
 
