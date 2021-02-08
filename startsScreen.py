@@ -21,7 +21,7 @@ class StartingScreen (Frame):
             current_map = self.map_roster.countries_list[x]
 
             Radiobutton(self, text = current_map.name, 
-                        font = "Helvetica 20 bold", variable = self.map_index, 
+                        font = "Times 20 bold", variable = self.map_index, 
                         value = x).grid(row = row, column = 0, sticky = W)
 
             Label(self, text = current_map.number_of_places, font = "Helvetica 20 bold").grid(row = row, column = 1, sticky = W)
