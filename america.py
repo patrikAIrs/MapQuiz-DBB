@@ -15,7 +15,9 @@ class Application (Frame):
 
         muricamap = PhotoImage(file = "AMERICANSTATES2.png")
         amap = Label(acanvas, image = muricamap)
-        acanvas.create_window(0, 0, anchor='nw', window=amap)
+        amap.photo = muricamap
+        amap.grid(row = 0, column = 0)
+
 
         statename = Entry(acanvas)
         acanvas.create_window(1000,500, window =statename)
