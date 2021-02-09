@@ -19,8 +19,20 @@ class Application (Frame):
         amap.grid(row = 0, column = 0)
 
 
-        statename = Entry(acanvas)
-        acanvas.create_window(1000,500, window =statename)
+        statename1 = Entry(acanvas)
+        acanvas.create_window(1040,550, window =statename1) #missouri
+
+        statename2 = Entry(acanvas)
+        acanvas.create_window(100,600, window =statename2) #california
+
+        statename3 = Entry(acanvas)
+        acanvas.create_window(180,230, window =statename3) #oregon
+
+        statename4 = Entry(acanvas)
+        acanvas.create_window(565,160, window =statename4) #montana
+
+        statename5 = Entry(acanvas)
+        acanvas.create_window(820,840, window =statename5) #texas
 
         
 
