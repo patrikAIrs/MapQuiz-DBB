@@ -17,7 +17,7 @@ class EuropeSketchpad (Frame):
         # acanvas.create_window(1000,500, window =statename)
 
 
-        europemap = PhotoImage(file = "AMERICANSTATES2.png")
+        europemap = PhotoImage(file = "EUROPEMAP3.png")
         europe_map_image = Label(self, image = europemap)
         europe_map_image.photo = europemap
         europe_map_image.grid(row = 0, column = 0)
