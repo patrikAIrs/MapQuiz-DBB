@@ -2,9 +2,9 @@ from tkinter import *
 from tkinter import ttk
 import random
 
-class Application (Frame):
+class AmericaScreen (Frame):
     def __init__ (self, master):
-        super(Application, self).__init__(master)
+        super(AmericaScreen, self).__init__(master)
         self.grid()
         self.create_widgets()
 
