@@ -2,9 +2,9 @@ from tkinter import *
 from tkinter import ttk
 import random
 
-class Application (Frame):
+class AsiaScreen (Frame):
     def __init__ (self, master):
-        super(Application, self).__init__(master)
+        super(AsiaScreen, self).__init__(master)
         self.grid()
         self.create_widgets()
 
@@ -76,10 +76,10 @@ class Application (Frame):
 
 
 
-root = Tk()
-root.title("Asia")
-root.geometry("1830x1080")
+# root = Tk()
+# root.title("Asia")
+# root.geometry("1830x1080")
 
-app = Application(root)
+# app = Application(root)
 
-root.mainloop()
+# root.mainloop()

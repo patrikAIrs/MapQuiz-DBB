@@ -2,8 +2,9 @@ from tkinter import *
 
 from startsScreen import StartingScreen
 from map_countries import Country_roster, Country_Object
-from europe import EuropeSketchpad
+from europe import EuropeScreen
 from america import AmericaScreen
+from asia import AsiaScreen
 
 class MapQuizManager (object):
 
@@ -40,10 +41,11 @@ class MapQuizManager (object):
 
         elif self.selected_country_index == "1":
             self.root.title("Europe")
-            self.current_screen = EuropeSketchpad (master = self.root)
+            self.current_screen = EuropeScreen (master = self.root)
 
         else: 
-            pass
+            self.root.title("Asia")
+            self.current_screen = AsiaScreen (master = self.root)
 
 
         

@@ -1,9 +1,9 @@
 from tkinter import *
 import random
 
-class EuropeSketchpad (Frame):
+class EuropeScreen (Frame):
     def __init__ (self, master):
-        super(EuropeSketchpad, self).__init__(master)
+        super(EuropeScreen, self).__init__(master)
         self.grid()
         self.create_widgets()
 
