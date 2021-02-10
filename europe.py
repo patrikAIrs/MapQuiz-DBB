@@ -17,6 +17,7 @@ class EuropeSketchpad (Frame):
         self.y_coordinates = [250, 545, 495, 527, 658, 763]
         self.country_indexes = [0, 1, 2, 3, 4, 5]
 
+        self.number_of_tries = 0
 
         self.current_country_index = random.choice(self.country_indexes)
 
@@ -30,6 +31,10 @@ class EuropeSketchpad (Frame):
         self.right_wrong = Label(self, text = "", font = "Times 20 bold")
         self.right_wrong.config(width = 10, height = 3)
         ecanvas.create_window(100, 200, window = self.right_wrong)
+
+        self.try_number = Label(self, text = "%s: %d" % ("Tries", self.number_of_tries), font = "Times 20 bold")
+        self.try_number.config(width = 10, height = 3)
+        ecanvas.create_window(300, 100, window = self.try_number)
 
         europemap = PhotoImage(file = "EUROPEMAP3.png")
         europe_map_image = Label(ecanvas, image = europemap)
@@ -50,9 +55,13 @@ class EuropeSketchpad (Frame):
         selected_index = int(self.country_radiobutton_value.get())
         if selected_index != self.current_country_index:
             self.right_wrong.config(text = "Incorrect")
+            self.number_of_tries += 1
+            self.try_number.config(text = "%s: %d" % ("Tries", self.number_of_tries))
         else:
             self.right_wrong.config(text = "Correct!")
             self.change_country_text()
+            self.number_of_tries += 1
+            self.try_number.config(text = "%s: %d" % ("Tries", self.number_of_tries))
 
     def change_country_text(self):
         if len(self.country_indexes) > 0:
@@ -62,8 +71,9 @@ class EuropeSketchpad (Frame):
             self.current_country_index = random.choice(self.country_indexes)
             self.country_text.config(text = self.country_list[self.current_country_index])
         else:
-           print("You did it!")
-           self.quit()
+            self.number_of_tries += 1
+            print("You found all countries in %d guesses" % (self.number_of_tries))
+            self.quit()
 
     # def play_again(self):
 
