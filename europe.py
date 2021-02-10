@@ -55,11 +55,16 @@ class EuropeSketchpad (Frame):
             self.change_country_text()
 
     def change_country_text(self):
-        self.country_indexes.remove(self.current_country_index)
-        self.current_country_index = random.choice(self.country_indexes)
-        self.country_text.config(text = self.country_list[self.current_country_index])
-         
-    
+        if len(self.country_indexes) > 0:
+            self.country_indexes.remove(self.current_country_index)
 
-         
+        if len(self.country_indexes) > 0:
+            self.current_country_index = random.choice(self.country_indexes)
+            self.country_text.config(text = self.country_list[self.current_country_index])
+        else:
+           print("You did it!")
+           self.quit()
+
+    # def play_again(self):
+
     
