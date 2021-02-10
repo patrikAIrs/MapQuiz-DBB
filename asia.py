@@ -10,10 +10,10 @@ class AsiaScreen (Frame):
 
 
     def create_widgets(self):
-        ascanvas = Canvas(self, width = 920, height = 569, background = 'gray')
+        ascanvas = Canvas(self, width = 990, height = 774, background = 'gray')
         ascanvas.pack(expand = YES, fill = BOTH)
 
-        asiamap = PhotoImage(file = "AMERICANSTATES2.png")
+        asiamap = PhotoImage(file = "ASIAMAP4.png")
         asmap = Label(ascanvas, image = asiamap)
         asmap.photo = asiamap
         asmap.grid(row = 0, column = 0)
