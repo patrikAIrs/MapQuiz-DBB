@@ -76,10 +76,10 @@ class Application (Frame):
 
 
 
-root = Tk()
-root.title("America")
-root.geometry("1830x1080")
+# root = Tk()
+# root.title("America")
+# root.geometry("1830x1080")
 
-app = Application(root)
+# app = Application(root)
 
-root.mainloop()
+# root.mainloop()
