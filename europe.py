@@ -13,10 +13,10 @@ class EuropeScreen (Frame):
 
     def create_widgets(self):
 
-        self.country_list = ["Russia", "Ukraine", "Poland", "Germany", "France", "Spain"]
-        self.x_coordinates = [1000, 900, 663, 478, 314, 138]
-        self.y_coordinates = [250, 545, 495, 527, 658, 763]
-        self.country_indexes = [0, 1, 2, 3, 4, 5]
+        self.country_list = ["Russia", "Ukraine", "Poland", "Germany", "France", "Spain", "Norway", "Sweden", "Finland"]
+        self.x_coordinates = [1000, 900, 663, 478, 314, 138, 468, 568, 715]
+        self.y_coordinates = [250, 545, 495, 527, 658, 763, 248, 282, 189]
+        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
         self.number_of_tries = 0
 
@@ -45,7 +45,7 @@ class EuropeScreen (Frame):
         self.country_radiobutton_value = StringVar()
         self.country_radiobutton_value.set(None)
 
-        for x in range(6):
+        for x in range(len(self.country_list)):
 
             country_button = Radiobutton(ecanvas, variable = self.country_radiobutton_value, value = x, command = self.right_or_wrong)
             ecanvas.create_window(self.x_coordinates[x], self.y_coordinates[x], window = country_button)

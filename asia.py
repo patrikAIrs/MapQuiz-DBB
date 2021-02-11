@@ -22,10 +22,10 @@ class AsiaScreen (Frame):
         self.number_of_tries = 0
 
 
-        self.country_list = ["China", "India", "Mongolia", "Kazakhstan", "S. Arabia", "Iran"]
-        self.x_coordinates = [600, 450, 563, 320, 170, 240]
-        self.y_coordinates = [360, 480, 265, 257, 460, 400]
-        self.country_indexes = [0, 1, 2, 3, 4, 5]
+        self.country_list = ["China", "India", "Mongolia", "Kazakhstan", "S. Arabia", "Iran", "Pakistan", "Afghanistan", "Turkey", "Myanmar", "Indonesia", "Yemen"]
+        self.x_coordinates = [600, 450, 563, 320, 170, 240, 332, 315, 69, 572, 736, 174]
+        self.y_coordinates = [360, 480, 265, 257, 460, 400, 428, 378, 331, 483, 686, 541]
+        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
         self.current_country_index = random.choice(self.country_indexes)
 
@@ -46,7 +46,7 @@ class AsiaScreen (Frame):
         self.country_radiobutton_value = StringVar()
         self.country_radiobutton_value.set(None)
 
-        for x in range(6):
+        for x in range(len(self.country_list)):
 
             country_button = Radiobutton(ascanvas, variable = self.country_radiobutton_value, value = x, command = self.right_or_wrong)
             ascanvas.create_window(self.x_coordinates[x], self.y_coordinates[x], window = country_button)
