@@ -3,10 +3,11 @@ from tkinter import ttk
 import random
 
 class AsiaScreen (Frame):
-    def __init__ (self, master):
+    def __init__ (self, master, number_of_attempts):
         super(AsiaScreen, self).__init__(master)
         self.grid()
         self.create_widgets()
+        self.number_of_attempts = number_of_attempts
 
 
     def create_widgets(self):
@@ -61,9 +62,9 @@ class AsiaScreen (Frame):
 
         else:
             self.right_wrong.config(text = "Correct!")
-            self.change_country_text()
             self.number_of_tries += 1
             self.try_number.config(text = "%s: %d" % ("Tries", self.number_of_tries))
+            self.change_country_text()
 
 
     def change_country_text(self):
@@ -75,8 +76,12 @@ class AsiaScreen (Frame):
             self.country_text.config(text = self.country_list[self.current_country_index])
         else:
             self.number_of_tries += 1
-            print("You found all countries in %d guesses" % (self.number_of_tries))
-            self.quit()
+            # print("You found all countries in %d guesses" % (self.number_of_tries))
+            self.export_number_of_tries()
+
+    def export_number_of_tries(self):
+
+        self.number_of_attempts(self.number_of_tries)
         
 
 
