@@ -3,7 +3,7 @@ root = tk.Tk()
 
 
 
-europemap = tk.PhotoImage(file = "EUROPEMAP3.png")
+europemap = tk.PhotoImage(file = "ASIAMAP4.png")
 europe_map_image = tk.Label(image = europemap)
 europe_map_image.photo = europemap
 europe_map_image.grid(row = 0, column = 0)
