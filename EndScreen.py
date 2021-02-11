@@ -3,6 +3,7 @@ from tkinter import *
 class EndingScreen (Frame):
     def __init__ (self, master, number_of_guesses):
         super(EndingScreen, self).__init__(master)
+        
         self.number_of_guesses = number_of_guesses
         self.grid()
         self.create_widgets()
