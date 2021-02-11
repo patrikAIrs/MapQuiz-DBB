@@ -3,6 +3,7 @@ from tkinter import *
 class EndingScreen (Frame):
     def __init__ (self, master, number_of_guesses):
         super(EndingScreen, self).__init__(master)
+
         
         self.number_of_guesses = number_of_guesses
         self.grid()
@@ -12,6 +13,11 @@ class EndingScreen (Frame):
 
         endcanvas = Canvas(self, width = 1434, height = 783)
         endcanvas.pack(expand = YES, fill = BOTH)
+
+        worldmap = PhotoImage(file = "MAPOFTHEWORLD.png")
+        wmap = Label(endcanvas, image = worldmap)
+        wmap.photo = worldmap
+        wmap.grid(row = 0, column = 0)
 
         self.you_won = Label(self, text = "You guessed all the countries in %d attempts" % (self.number_of_guesses), font = "Times 40 bold")
         self.you_won.config(height = 3, width = 50)

@@ -14,8 +14,11 @@ class MapQuizManager (object):
         self.root = Tk()
         self.current_screen = None  
         self.countries_roster = None
+        
 
     def setup_startScreen (self):
+
+        # self.root.attributes ('-alpha', 0.5)
 
         self.root.title ("Selecting Map: ")
         self.countries_roster = Country_roster ("map_characteristics.txt")
@@ -28,6 +31,8 @@ class MapQuizManager (object):
 
     def country_screen (self, selected_country_index):
         
+        # self.root.attributes ('-alpha', 0.5)
+
         self.selected_country_index = selected_country_index
 
         selected_country_index = int (selected_country_index)
