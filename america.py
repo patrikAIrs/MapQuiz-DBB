@@ -22,10 +22,10 @@ class AmericaScreen (Frame):
         self.number_of_tries = 0
 
 
-        self.country_list = ["New York", "Oregon", "California", "Montana", "Missouri", "Texas"]
-        self.x_coordinates = [1580, 215, 160, 565, 1040, 820]
-        self.y_coordinates = [300, 230, 600, 160, 550, 840]
-        self.country_indexes = [0, 1, 2, 3, 4, 5]
+        self.country_list = ["New York", "Oregon", "California", "Montana", "Missouri", "Texas","Minnesota","Michigan","Ohio","Alabama" ]
+        self.x_coordinates = [1580, 215, 160, 565, 1040, 820, 975, 1250, 1350, 1260]
+        self.y_coordinates = [300, 230, 600, 160, 550, 840, 290, 300, 450, 815]
+        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
         self.current_country_index = random.choice(self.country_indexes)
 
@@ -42,7 +42,7 @@ class AmericaScreen (Frame):
         self.country_radiobutton_value = StringVar()
         self.country_radiobutton_value.set(None)
 
-        for x in range(6):
+        for x in range(len(self.country_list)):
 
             country_button = Radiobutton(acanvas, variable = self.country_radiobutton_value, value = x, command = self.right_or_wrong)
             acanvas.create_window(self.x_coordinates[x], self.y_coordinates[x], window = country_button)
