@@ -62,10 +62,17 @@ class MapQuizManager (object):
         self.current_screen.destroy()
         self.root.title("You Won!")
 
-        print("You won in %d tries!" % (self.number_of_attempts))
+        self.current_screen = EndingScreen (master = self.root, number_of_guesses = self.number_of_attempts, callback_on_selected = self.play_again_or_quit)
 
-        self.current_screen = EndingScreen (master = self.root, number_of_guesses = self.number_of_attempts)
+    def play_again_or_quit(self, play_again_or_not):
+        self.play_again_or_not = play_again_or_not
 
+        if play_again_or_not == "0":
+            self.current_screen.destroy()
+            self.setup_startScreen()
+
+        elif play_again_or_not == "1":
+            print("Done!")
 
         
 
