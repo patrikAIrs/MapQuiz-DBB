@@ -75,7 +75,6 @@ class AsiaScreen (Frame):
             self.current_country_index = random.choice(self.country_indexes)
             self.country_text.config(text = self.country_list[self.current_country_index])
         else:
-            self.number_of_tries += 1
             # print("You found all countries in %d guesses" % (self.number_of_tries))
             self.export_number_of_tries()
 

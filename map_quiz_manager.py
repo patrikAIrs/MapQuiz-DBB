@@ -37,18 +37,18 @@ class MapQuizManager (object):
 
         if self.selected_country_index == "0":
             self.root.title("America")
-            self.current_screen = AmericaScreen (master = self.root)
-                                                # ,callback_on_selected = self.end_screen)
+            self.current_screen = AmericaScreen (master = self.root
+                                                ,number_of_attempts = self.end_screen)
 
         elif self.selected_country_index == "1":
             self.root.title("Europe")
-            self.current_screen = EuropeScreen (master = self.root)
-                                                # ,callback_on_selected = self.end_screen)
+            self.current_screen = EuropeScreen (master = self.root
+                                                ,number_of_attempts = self.end_screen)
 
         else: 
             self.root.title("Asia")
             self.current_screen = AsiaScreen (master = self.root
-                                             ,number_of_attempts = self.end_screen)
+                                              ,number_of_attempts = self.end_screen)
 
     def end_screen(self, number_of_attempts):
 
@@ -58,6 +58,8 @@ class MapQuizManager (object):
         self.root.title("You Won!")
 
         print("You won in %d tries!" % (self.number_of_attempts))
+
+        self.current_screen = EndingScreen (master = self.root, number_of_guesses = self.number_of_attempts)
 
 
         

@@ -3,10 +3,11 @@ from tkinter import ttk
 import random
 
 class AmericaScreen (Frame):
-    def __init__ (self, master):
+    def __init__ (self, master, number_of_attempts):
         super(AmericaScreen, self).__init__(master)
         self.grid()
         self.create_widgets()
+        self.number_of_attempts = number_of_attempts
 
 
     def create_widgets(self):
@@ -17,6 +18,8 @@ class AmericaScreen (Frame):
         amap = Label(acanvas, image = muricamap)
         amap.photo = muricamap
         amap.grid(row = 0, column = 0)
+
+        self.number_of_tries = 0
 
 
         self.country_list = ["New York", "Oregon", "California", "Montana", "Missouri", "Texas"]
@@ -50,8 +53,10 @@ class AmericaScreen (Frame):
         selected_index = int(self.country_radiobutton_value.get())
         if selected_index != self.current_country_index:
             self.right_wrong.config(text = "Incorrect")
+            self.number_of_tries += 1
         else:
             self.right_wrong.config(text = "Correct!")
+            self.number_of_tries += 1
             self.change_country_text()
 
     def change_country_text(self):
@@ -62,8 +67,12 @@ class AmericaScreen (Frame):
             self.current_country_index = random.choice(self.country_indexes)
             self.country_text.config(text = self.country_list[self.current_country_index])
         else:
-           print("You did it!")
-           self.quit()
+           self.number_of_tries += 1
+           self.export_number_of_tries()
+
+    def export_number_of_tries(self):
+
+        self.number_of_attempts(self.number_of_tries)
         
 
 

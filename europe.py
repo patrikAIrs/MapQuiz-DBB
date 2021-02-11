@@ -2,10 +2,11 @@ from tkinter import *
 import random
 
 class EuropeScreen (Frame):
-    def __init__ (self, master):
+    def __init__ (self, master, number_of_attempts):
         super(EuropeScreen, self).__init__(master)
         self.grid()
         self.create_widgets()
+        self.number_of_attempts = number_of_attempts
 
         
 
@@ -59,9 +60,9 @@ class EuropeScreen (Frame):
             self.try_number.config(text = "%s: %d" % ("Tries", self.number_of_tries))
         else:
             self.right_wrong.config(text = "Correct!")
-            self.change_country_text()
             self.number_of_tries += 1
             self.try_number.config(text = "%s: %d" % ("Tries", self.number_of_tries))
+            self.change_country_text()
 
     def change_country_text(self):
         if len(self.country_indexes) > 0:
@@ -71,10 +72,11 @@ class EuropeScreen (Frame):
             self.current_country_index = random.choice(self.country_indexes)
             self.country_text.config(text = self.country_list[self.current_country_index])
         else:
-            self.number_of_tries += 1
-            print("You found all countries in %d guesses" % (self.number_of_tries))
-            self.quit()
+            # print("You found all countries in %d guesses" % (self.number_of_tries))
+            self.export_number_of_tries()
 
-    # def play_again(self):
+    def export_number_of_tries(self):
+
+        self.number_of_attempts(self.number_of_tries)
 
     
