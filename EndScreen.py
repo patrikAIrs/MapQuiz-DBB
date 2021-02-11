@@ -51,4 +51,3 @@ class EndingScreen (Frame):
 # app = EndingScreen(root)
 
 # root.mainloop()
-

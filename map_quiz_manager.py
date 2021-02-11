@@ -72,7 +72,7 @@ class MapQuizManager (object):
             self.setup_startScreen()
 
         elif play_again_or_not == "1":
-            print("Done!")
+            self.current_screen.quit()
 
         
 
