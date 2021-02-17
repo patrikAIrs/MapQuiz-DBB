@@ -22,10 +22,10 @@ class AmericaScreen (Frame):
         self.number_of_tries = 0
 
 
-        self.country_list = ["New York", "Oregon", "California", "Montana", "Missouri", "Texas","Minnesota","Michigan","Ohio","Alabama" ]
-        self.x_coordinates = [1580, 215, 160, 565, 1040, 820, 975, 1250, 1350, 1260]
-        self.y_coordinates = [300, 230, 600, 160, 550, 840, 290, 300, 450, 815]
-        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        self.country_list = ["New York", "Oregon", "California", "Montana", "Missouri", "Texas", "Minnesota", "Michigan", "Ohio", "Alabama", "Maine", "Utah", "Kansas", "Kentucky", "Florida" ]
+        self.x_coordinates = [1580, 215, 160, 565, 1040, 820, 975, 1250, 1350, 1260, 1716, 421, 845, 1285, 1451]
+        self.y_coordinates = [300, 230, 600, 160, 550, 840, 290, 300, 450, 815, 158, 485, 552, 576, 917]
+        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 
         self.current_country_index = random.choice(self.country_indexes)
 
@@ -67,7 +67,6 @@ class AmericaScreen (Frame):
             self.current_country_index = random.choice(self.country_indexes)
             self.country_text.config(text = self.country_list[self.current_country_index])
         else:
-           self.number_of_tries += 1
            self.export_number_of_tries()
 
     def export_number_of_tries(self):
