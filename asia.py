@@ -22,10 +22,10 @@ class AsiaScreen (Frame):
         self.number_of_tries = 0
 
 
-        self.country_list = ["China", "India", "Mongolia", "Kazakhstan", "S. Arabia", "Iran", "Pakistan", "Afghanistan", "Turkey", "Myanmar", "Indonesia", "Yemen"]
-        self.x_coordinates = [600, 450, 563, 320, 170, 240, 332, 315, 69, 572, 736, 174]
-        self.y_coordinates = [360, 480, 265, 257, 460, 400, 428, 378, 331, 483, 686, 541]
-        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        self.country_list = ["China", "India", "Mongolia", "Kazakhstan", "S. Arabia", "Iran", "Pakistan", "Afghanistan", "Turkey", "Myanmar", "Indonesia", "Yemen", "Oman", "Iraq", "Nepal", "Turkmenistan", "Uzbekistan", "Bangladesh", "Sri Lanka",  "Kergizstan", "Tajikistan", "North Korea", "South Korea", "Japan", "Thailand", "United Arab Emirates"]
+        self.x_coordinates = [600, 450, 563, 320, 170, 240, 332, 315, 69, 572, 736, 174, 258, 143, 468, 260, 288, 528, 461, 368, 339, 762, 788, 867, 618, 240]
+        self.y_coordinates = [360, 480, 265, 257, 460, 400, 428, 378, 331, 483, 686, 541, 500, 386, 429, 330, 306, 471, 614, 312, 344, 325, 359, 359, 536, 467]
+        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
         self.current_country_index = random.choice(self.country_indexes)
 

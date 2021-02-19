@@ -13,10 +13,10 @@ class EuropeScreen (Frame):
 
     def create_widgets(self):
 
-        self.country_list = ["Russia", "Ukraine", "Poland", "Germany", "France", "Spain", "Norway", "Sweden", "Finland", "Belarus", "UK", "Czech Rep.", "Austria", "Italy", "Romania"]
-        self.x_coordinates = [1000, 900, 663, 478, 314, 138, 468, 568, 715, 814, 270, 573, 579, 482, 801]
-        self.y_coordinates = [250, 545, 495, 527, 658, 763, 248, 282, 189, 432, 475, 571, 640, 722, 677]
-        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+        self.country_list = ["Russia", "Ukraine", "Poland", "Germany", "France", "Spain", "Norway", "Sweden", "Finland", "Belarus", "UK", "Czech Rep.", "Austria", "Italy", "Romania", "Slovakia", "Hungary", "Slovenia", "Croatia", "Serbia", "Bulgaria", "Turkey", "Lithuania", "Latvia", "Estonia"]
+        self.x_coordinates = [1000, 900, 663, 478, 314, 138, 468, 568, 715, 814, 270, 573, 579, 482, 801, 688, 673, 574, 621, 715, 818, 1061, 736, 749, 742]
+        self.y_coordinates = [250, 545, 495, 527, 658, 763, 248, 282, 189, 432, 475, 571, 640, 722, 677, 603, 663, 695, 710, 747, 775, 772, 391, 342, 294]
+        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
         self.number_of_tries = 0
 
