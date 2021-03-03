@@ -6,8 +6,6 @@ class StartingScreen (Frame):
 
         self.master = master
 
-        self.master.geometry("2000x1000")
-
 
         self.map_roster = map_roster
         self.callback_on_selected = callback_on_selected
