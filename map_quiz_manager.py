@@ -6,6 +6,8 @@ from europe import EuropeScreen
 from america import AmericaScreen
 from asia import AsiaScreen
 from EndScreen import EndingScreen
+from europelabel import EuropeLabelScreen
+from asialabel import AsiaLabelScreen
 
 class MapQuizManager (object):
 
@@ -21,6 +23,7 @@ class MapQuizManager (object):
         # self.root.attributes ('-alpha', 0.5)
 
         self.root.title ("Selecting Map: ")
+        self.root.geometry("1830x1080")
         self.countries_roster = Country_roster ("map_characteristics.txt")
 
         self.current_screen = StartingScreen(master = self.root, 
@@ -46,13 +49,14 @@ class MapQuizManager (object):
                                                 ,number_of_attempts = self.end_screen)
 
         elif self.selected_country_index == "1":
+
             self.root.title("Europe")
             self.current_screen = EuropeScreen (master = self.root
                                                 ,number_of_attempts = self.end_screen)
 
         else: 
             self.root.title("Asia")
-            self.current_screen = AsiaScreen (master = self.root
+            self.current_screen = AsiaLabelScreen (master = self.root
                                               ,number_of_attempts = self.end_screen)
 
     def end_screen(self, number_of_attempts):

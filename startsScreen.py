@@ -20,18 +20,31 @@ class StartingScreen (Frame):
         for x in range(3):
             current_map = self.map_roster.countries_list[x]
 
+            Label(self, text = "                       ").grid(row = row, column = 1)
+            Label(self, text = "                       ").grid(row = row, column = 2)
+            Label(self, text = "                       ").grid(row = row, column = 3)
+            Label(self, text = "                       ").grid(row = row, column = 4)
+            Label(self, text = "                       ").grid(row = row, column = 5)
+            Label(self, text = "                       ").grid(row = row, column = 6)
+
             Radiobutton(self, text = current_map.name, 
-                        font = "Times 20 bold", variable = self.map_index, 
-                        value = x).grid(row = row, column = 0, sticky = W)
+                        font = "Times 40 bold", variable = self.map_index, 
+                        value = x).grid(row = row, column = 7, sticky = W)
 
-            Label(self, text = current_map.number_of_places, font = "Helvetica 20 bold").grid(row = row, column = 1, sticky = W)
+            muricamap = PhotoImage(file = "Americamapsmalll.png")
+            amap = Label(image = muricamap)
+            amap.photo = muricamap
+            amap.grid(row = row, column = 8)
 
-            row +=1
+            row += 1
             
 
-        
-        self.country_selected_button = Button(self, text = 'Country Selected!', fg = "Red", bg = "black", command = self.selected_clicked)
-        self.country_selected_button.grid(row = row + 1, column = 4)
+        Label(self, text = " ").grid(row = row + 1, column = 6)
+        Label(self, text = " ").grid(row = row + 2, column = 6)
+        Label(self, text = " ").grid(row = row + 3, column = 6)
+
+        self.country_selected_button = Button(self, text = 'Country Selected!', fg = "Red", bg = "black", font = "Times 50 bold", command = self.selected_clicked)
+        self.country_selected_button.grid(row = row + 3, column = 7)
     
     def selected_clicked (self):
         self.callback_on_selected(self.map_index.get())
