@@ -31,7 +31,7 @@ class StartingScreen (Frame):
                         font = "Times 40 bold", variable = self.map_index, 
                         value = x).grid(row = row, column = 7, sticky = W)
 
-            muricamap = PhotoImage(file = "AMERICANSTATES2.png")
+            muricamap = PhotoImage(file = "Americamapsmalll.png")
             amap = Label(image = muricamap)
             amap.photo = muricamap
             amap.grid(row = row, column = 8)
