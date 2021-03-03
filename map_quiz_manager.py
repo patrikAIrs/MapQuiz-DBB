@@ -23,7 +23,6 @@ class MapQuizManager (object):
         # self.root.attributes ('-alpha', 0.5)
 
         self.root.title ("Selecting Map: ")
-        self.root.geometry("1830x1080")
         self.countries_roster = Country_roster ("map_characteristics.txt")
 
         self.current_screen = StartingScreen(master = self.root, 

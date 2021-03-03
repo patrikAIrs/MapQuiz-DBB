@@ -21,7 +21,6 @@ class AmericaScreen (Frame):
 
         self.number_of_tries = 0
 
-
         self.country_list = ["New York", "Oregon", "California", "Montana", "Missouri", "Texas", "Minnesota", "Michigan", "Ohio", "Alabama", "Maine", "Utah", "Kansas", "Kentucky", "Florida" ]
         self.x_coordinates = [1580, 215, 160, 565, 1040, 820, 975, 1250, 1350, 1260, 1716, 421, 845, 1285, 1451]
         self.y_coordinates = [300, 230, 600, 160, 550, 840, 290, 300, 450, 815, 158, 485, 552, 576, 917]
