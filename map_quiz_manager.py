@@ -30,6 +30,10 @@ class MapQuizManager (object):
                                             callback_on_selected = self.country_screen
                                             )
 
+    # def choose_game_mode(self):
+    #     self.root.title ("Choose Game Mode: ")
+
+
 
     def country_screen (self, selected_country_index):
         
