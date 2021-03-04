@@ -45,12 +45,18 @@ class EuropeScreen (Frame):
         self.country_radiobutton_value = StringVar()
         self.country_radiobutton_value.set(None)
 
+
         for x in range(len(self.country_list)):
 
             country_button = Radiobutton(ecanvas, variable = self.country_radiobutton_value, value = x, command = self.right_or_wrong)
             ecanvas.create_window(self.x_coordinates[x], self.y_coordinates[x], window = country_button)
 
+        self.exit_button = Button(self, text = "Go Back to Home Screen", command = self.exit,
+                                  font = "Times 20 bold", bg = "light blue")
+        ecanvas.create_window(362, 846, window = self.exit_button)
 
+    def exit(self):
+        self.number_of_attempts(69420)
 
     def right_or_wrong(self):
         selected_index = int(self.country_radiobutton_value.get())
@@ -74,6 +80,7 @@ class EuropeScreen (Frame):
         else:
             # print("You found all countries in %d guesses" % (self.number_of_tries))
             self.export_number_of_tries()
+
 
     def export_number_of_tries(self):
 

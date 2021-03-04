@@ -57,19 +57,12 @@ class AsiaLabelScreen (Frame):
             ascanvas.create_window(self.x_coordinates[x], self.y_coordinates[x], window = country_button)
 
 
+        self.exit_button = Button(self, text = "Go Back to Home Screen", command = self.exit,
+                                  font = "Times 20 bold", bg = "light blue")
+        ascanvas.create_window(245, 681, window = self.exit_button)
 
-    # def right_or_wrong(self):
-    #     selected_index = int(self.country_radiobutton_value.get())
-    #     if selected_index != self.current_country_index:
-    #         self.right_wrong.config(text = "Incorrect")
-    #         self.number_of_tries += 1
-    #         self.try_number.config(text = "%s: %d" % ("Tries", self.number_of_tries))
-
-    #     else:
-    #         self.right_wrong.config(text = "Correct!")
-    #         self.number_of_tries += 1
-    #         self.try_number.config(text = "%s: %d" % ("Tries", self.number_of_tries))
-    #         self.change_country_text()
+    def exit(self):
+        self.number_of_attempts(69420)
 
     def right_or_wrong(self):
         country_submission = self.country_entry.get()

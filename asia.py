@@ -51,6 +51,12 @@ class AsiaScreen (Frame):
             country_button = Radiobutton(ascanvas, variable = self.country_radiobutton_value, value = x, command = self.right_or_wrong)
             ascanvas.create_window(self.x_coordinates[x], self.y_coordinates[x], window = country_button)
 
+        self.exit_button = Button(self, text = "Go Back to Home Screen", command = self.exit,
+                                  font = "Times 20 bold", bg = "light blue")
+        ascanvas.create_window(245, 681, window = self.exit_button)
+
+    def exit(self):
+        self.number_of_attempts(69420)
 
 
     def right_or_wrong(self):
