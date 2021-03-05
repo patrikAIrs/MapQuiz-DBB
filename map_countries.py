@@ -1,8 +1,7 @@
 class Country_Object (object):
 
-    def __init__(self, name, number_of_places):
+    def __init__(self, name):
         self.name = name
-        self.number_of_places = number_of_places
 
 class Country_roster (object):
 
@@ -15,6 +14,6 @@ class Country_roster (object):
         for line in country_text_file:
             line = line.strip()
             my_fields = line.split(",")
-            country = Country_Object (my_fields[0], int(my_fields[1]))
+            country = Country_Object (my_fields[0])
             self.countries_list.append(country)
     

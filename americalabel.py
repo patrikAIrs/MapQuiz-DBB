@@ -45,7 +45,7 @@ class AmericaLabelScreen (Frame):
 
 
         self.country_radiobutton_value = StringVar()
-        self.country_radiobutton_value.set(None)
+        self.country_radiobutton_value.set(self.current_country_index)
 
         self.country_entry = Entry(self, font = "Times 15", bg = "light yellow")
         acanvas.create_window(600, 50, window = self.country_entry)
@@ -61,6 +61,15 @@ class AmericaLabelScreen (Frame):
         self.exit_button = Button(self, text = "Go Back to Home Screen", command = self.exit,
                                   font = "Times 20 bold", bg = "light blue")
         acanvas.create_window(362, 846, window = self.exit_button)
+
+        self.list_of_remaining_countries = []
+        self.list_of_remaining_countries.clear()
+
+        for x in self.country_indexes:
+            self.list_of_remaining_countries.append(self.country_list[x])
+
+        self.country_wordbox = Label(self, text = self.list_of_remaining_countries, font = "Times 15 bold")
+        acanvas.create_window(800, 20, window = self.country_wordbox)
 
     def exit(self):
         self.number_of_attempts(69420)
@@ -86,6 +95,12 @@ class AmericaLabelScreen (Frame):
     def change_country_text(self):
         if len(self.country_indexes) > 0:
             self.country_indexes.remove(self.current_country_index)
+            self.list_of_remaining_countries.clear()
+
+            for x in self.country_indexes:
+                self.list_of_remaining_countries.append(self.country_list[x])
+
+            self.country_wordbox.config(text = self.list_of_remaining_countries)
 
         if len(self.country_indexes) > 0:
             self.current_country_index = random.choice(self.country_indexes)

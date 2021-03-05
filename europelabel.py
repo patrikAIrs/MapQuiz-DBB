@@ -12,10 +12,10 @@ class EuropeLabelScreen (Frame):
 
     def create_widgets(self):
 
-        self.country_list = ["Russia", "Ukraine", "Poland", "Germany", "France", "Spain", "Norway", "Sweden", "Finland", "Belarus", "Uk", "Czech Rep.", "Austria", "Italy", "Romania"]
-        self.x_coordinates = [1000, 900, 663, 478, 314, 138, 468, 568, 715, 814, 270, 573, 579, 482, 801]
-        self.y_coordinates = [250, 545, 495, 527, 658, 763, 248, 282, 189, 432, 475, 571, 640, 722, 677]
-        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+        self.country_list = ["Russia", "Ukraine", "Poland", "Germany", "France", "Spain", "Norway", "Sweden", "Finland", "Belarus", "Uk", "Czech Rep.", "Austria", "Italy", "Romania", "Slovakia", "Hungary", "Slovenia", "Croatia", "Serbia", "Bulgaria", "Turkey", "Lithuania", "Latvia", "Estonia"]
+        self.x_coordinates = [1000, 900, 663, 478, 314, 138, 468, 568, 715, 814, 270, 573, 579, 482, 801, 688, 673, 574, 621, 715, 818, 1061, 736, 749, 742]
+        self.y_coordinates = [250, 545, 495, 527, 658, 763, 248, 282, 189, 432, 475, 571, 640, 722, 677, 603, 663, 695, 710, 747, 775, 772, 391, 342, 294]
+        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
         self.number_of_tries = 0
 
@@ -31,7 +31,7 @@ class EuropeLabelScreen (Frame):
 
         self.right_wrong = Label(self, text = "", font = "Times 20 bold")
         self.right_wrong.config(width = 10, height = 3)
-        ecanvas.create_window(100, 200, window = self.right_wrong)
+        ecanvas.create_window(100, 100, window = self.right_wrong)
 
         self.try_number = Label(self, text = "%s: %d" % ("Tries", self.number_of_tries), font = "Times 20 bold")
         self.try_number.config(width = 10, height = 3)
@@ -60,6 +60,15 @@ class EuropeLabelScreen (Frame):
                                   font = "Times 20 bold", bg = "light blue")
         ecanvas.create_window(362, 846, window = self.exit_button)
 
+        self.list_of_remaining_countries = []
+        self.list_of_remaining_countries.clear()
+
+        for x in self.country_indexes:
+            self.list_of_remaining_countries.append(self.country_list[x])
+
+        self.country_wordbox = Label(self, text = self.list_of_remaining_countries, font = "Times 13 bold")
+        ecanvas.create_window(600, 20, window = self.country_wordbox)
+
     def exit(self):
         self.number_of_attempts(69420)
 
@@ -86,6 +95,12 @@ class EuropeLabelScreen (Frame):
     def change_country_text(self):
         if len(self.country_indexes) > 0:
             self.country_indexes.remove(self.current_country_index)
+            self.list_of_remaining_countries.clear()
+
+            for x in self.country_indexes:
+                self.list_of_remaining_countries.append(self.country_list[x])
+
+            self.country_wordbox.config(text = self.list_of_remaining_countries)
 
         if len(self.country_indexes) > 0:
             self.current_country_index = random.choice(self.country_indexes)

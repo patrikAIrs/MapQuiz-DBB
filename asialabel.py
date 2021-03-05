@@ -12,10 +12,11 @@ class AsiaLabelScreen (Frame):
 
     def create_widgets(self):
 
-        self.country_list = ["China", "India", "Mongolia", "Kazakhstan", "S. Arabia", "Iran", "Pakistan", "Afghanistan", "Turkey", "Myanmar", "Indonesia", "Yemen"]
-        self.x_coordinates = [600, 450, 563, 320, 170, 240, 332, 315, 69, 572, 736, 174]
-        self.y_coordinates = [360, 480, 265, 257, 460, 400, 428, 378, 331, 483, 686, 541]
-        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        self.country_list = ["China", "India", "Mongolia", "Kazakhstan", "S. Arabia", "Iran", "Pakistan", "Afghanistan", "Turkey", "Myanmar", "Indonesia", "Yemen", "Oman", "Iraq", "Nepal", "Turkmenistan", "Uzbekistan", "Bangladesh", "Sri Lanka",  "Kergizstan", "Tajikistan", "North Korea", "South Korea"]
+        self.x_coordinates = [600, 450, 563, 320, 170, 240, 332, 315, 69, 572, 736, 174, 258, 143, 468, 260, 288, 528, 461, 368, 339, 762, 788]
+        self.y_coordinates = [360, 480, 265, 257, 460, 400, 428, 378, 331, 483, 686, 541, 500, 386, 429, 330, 306, 471, 614, 312, 344, 325, 359]
+        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+
 
         self.number_of_tries = 0
         
@@ -31,7 +32,7 @@ class AsiaLabelScreen (Frame):
 
         self.right_wrong = Label(self, text = "", font = "Times 20 bold")
         self.right_wrong.config(width = 10, height = 3)
-        ascanvas.create_window(100, 200, window = self.right_wrong)
+        ascanvas.create_window(100, 100, window = self.right_wrong)
 
         self.try_number = Label(self, text = "%s: %d" % ("Tries", self.number_of_tries), font = "Times 20 bold")
         self.try_number.config(width = 10, height = 3)
@@ -61,6 +62,15 @@ class AsiaLabelScreen (Frame):
                                   font = "Times 20 bold", bg = "light blue")
         ascanvas.create_window(245, 681, window = self.exit_button)
 
+        self.list_of_remaining_countries = []
+        self.list_of_remaining_countries.clear()
+
+        for x in self.country_indexes:
+            self.list_of_remaining_countries.append(self.country_list[x])
+
+        self.country_wordbox = Label(self, text = self.list_of_remaining_countries, font = "Times 10")
+        ascanvas.create_window(500, 20, window = self.country_wordbox)
+
     def exit(self):
         self.number_of_attempts(69420)
 
@@ -85,6 +95,12 @@ class AsiaLabelScreen (Frame):
     def change_country_text(self):
         if len(self.country_indexes) > 0:
             self.country_indexes.remove(self.current_country_index)
+            self.list_of_remaining_countries.clear()
+
+            for x in self.country_indexes:
+                self.list_of_remaining_countries.append(self.country_list[x])
+
+            self.country_wordbox.config(text = self.list_of_remaining_countries)
 
         if len(self.country_indexes) > 0:
             self.current_country_index = random.choice(self.country_indexes)
