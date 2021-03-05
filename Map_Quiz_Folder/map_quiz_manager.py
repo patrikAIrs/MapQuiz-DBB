@@ -75,6 +75,9 @@ class MapQuizManager (object):
             self.current_screen = AsiaLabelScreen (master = self.root
                                               ,number_of_attempts = self.end_screen)
 
+        else:
+            self.current_screen.quit()
+
     def end_screen(self, number_of_attempts):
 
         self.number_of_attempts = number_of_attempts

@@ -56,6 +56,14 @@ class StartingScreen (Frame):
         self.country_selected_button = Button(self, text = 'Country Selected!', fg = "Red", bg = "black", font = "Times 50 bold", command = self.selected_clicked)
         self.country_selected_button.grid(row = row + 1, column = 4, sticky = EW)
 
+        self.quit_button = Button(self, text = "Quit", font = "Times 20 bold", command = self.exit_game)
+        self.quit_button.grid(row = 0, column = 0)
+
+
+    def exit_game(self):
+        self.map_index.set("100")
+        self.mode_index.set(100)
+        self.selected_clicked()
     
     def selected_clicked (self):
         self.callback_on_selected(int(self.map_index.get()) + self.mode_index.get())
