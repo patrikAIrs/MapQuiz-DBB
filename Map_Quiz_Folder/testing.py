@@ -78,7 +78,7 @@ class Country_Roster (object):
 
 Country_List = Country_Roster("testing.txt")
 
-print(Country_List.countries_list[0].image_file_name)
+print(Country_List.countries_list[0].name)
 
 
 
