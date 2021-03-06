@@ -36,7 +36,7 @@ class AmericaLabelScreen (Frame):
 
         self.right_wrong = Label(self, text = "", font = "Times 20 bold")
         self.right_wrong.config(width = 10, height = 3)
-        acanvas.create_window(100, 200, window = self.right_wrong)
+        acanvas.create_window(100, 100, window = self.right_wrong)
 
 
         self.try_number = Label(self, text = "%s: %d" % ("Tries", self.number_of_tries), font = "Times 20 bold")

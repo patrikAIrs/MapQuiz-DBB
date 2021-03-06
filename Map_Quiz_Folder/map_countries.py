@@ -16,4 +16,3 @@ class Country_roster (object):
             my_fields = line.split(",")
             country = Country_Object (my_fields[0])
             self.countries_list.append(country)
-    
