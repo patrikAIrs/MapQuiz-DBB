@@ -1,1 +1,3 @@
-America   ,   <New York> <Florida> <Texas> <California>   ,   <1000> <900> <663> <478>   ,   <250> <545> <495> <527>
+Name  ,  'Place Name 1' 'Place Name 2'  ,   'X coord 1' 'X coord 2' 'X coord 3'  ,  'Y coord 1' 'Y coord 2' 'Y coord 3', 'Image File Name'
+
+America , 'New York' 'Oregon' 'California' 'Montana' 'Missouri' 'Texas' 'Minnesota' 'Michigan' 'Ohio' 'Alabama' 'Utah' 'Kansas' 'Kentucky' 'Florida' 'Wyoming' 'Virginia' 'Iowa' 'Illinois' 'Oklahoma' 'Nevada' 'Arizona' 'Idaho' 'North Dakota' 'Georgia' , '1580' '215' '160' '565' '1040' '820' '975' '1250' '1350' '1260' '421' '845' '1285' '1451' '570' '1510' '1005' '1145' '878' '264' '386' '368' '794' '1366' , '300' '230' '600' '160' '550' '840' '290' '300' '450' '815' '485' '552' '576' '917' '345' '537' '408' '476' '681' '448' '680' '265' '182' '768' , 'AMERICANSTATES2.png'

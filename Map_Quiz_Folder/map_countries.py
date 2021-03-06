@@ -9,9 +9,9 @@ class Country_roster (object):
 
         self.countries_list = []
 
-        country_text_file = open(file_name, "r")
+        f = open(file_name, "r")
 
-        for line in country_text_file:
+        for line in f:
             line = line.strip()
             my_fields = line.split(",")
             country = Country_Object (my_fields[0])
