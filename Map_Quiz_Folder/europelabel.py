@@ -2,29 +2,36 @@ from tkinter import *
 import random
 
 class EuropeLabelScreen (Frame):
-    def __init__ (self, master, number_of_attempts):
+    def __init__ (self, master, roster, number_of_attempts):
         super(EuropeLabelScreen, self).__init__(master)
+        self.roster = roster
         self.grid()
         self.create_widgets()
         self.number_of_attempts = number_of_attempts
-
         
 
-    def create_widgets(self):
 
-        self.country_list = ["Russia", "Ukraine", "Poland", "Germany", "France", "Spain", "Norway", "Sweden", "Finland", "Belarus", "Uk", "Czech Rep.", "Austria", "Italy", "Romania", "Slovakia", "Hungary", "Slovenia", "Croatia", "Serbia", "Bulgaria", "Turkey", "Lithuania", "Latvia", "Estonia"]
-        self.x_coordinates = [1000, 900, 663, 478, 314, 138, 468, 568, 715, 814, 270, 573, 579, 482, 801, 688, 673, 574, 621, 715, 818, 1061, 736, 749, 742]
-        self.y_coordinates = [250, 545, 495, 527, 658, 763, 248, 282, 189, 432, 475, 571, 640, 722, 677, 603, 663, 695, 710, 747, 775, 772, 391, 342, 294]
-        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+    def create_widgets(self):
+        ecanvas = Canvas(self, width = 1830, height = 1080, background = 'gray')
+        ecanvas.pack(expand = YES, fill = BOTH)
+
+        muricamap = PhotoImage(file = self.roster.image_file_name)
+        amap = Label(ecanvas, image = muricamap)
+        amap.photo = muricamap
+        amap.grid(row = 0, column = 0)
 
         self.number_of_tries = 0
 
+        self.country_list = self.roster.place_names
+        self.x_coordinates = self.roster.x_coords
+        self.y_coordinates = self.roster.y_coords
+        self.country_indexes = []
+        for x in range(len(self.country_list)):
+            self.country_indexes.append(x)
+        self.number_of_tries = 0
+
         self.current_country_index = random.choice(self.country_indexes)
-
-
-        ecanvas = Canvas(self, width = 1280, height = 1024)
-        ecanvas.pack(expand = YES, fill = BOTH)
-
+        
         self.country_text = Label(self, text = self.country_list[self.current_country_index], font = "Times 20 bold")
         self.country_text.config(width = 10, height = 3)
         ecanvas.create_window(100, 100, window = self.country_text)
@@ -36,11 +43,6 @@ class EuropeLabelScreen (Frame):
         self.try_number = Label(self, text = "%s: %d" % ("Tries", self.number_of_tries), font = "Times 20 bold")
         self.try_number.config(width = 10, height = 3)
         ecanvas.create_window(300, 100, window = self.try_number)
-
-        europemap = PhotoImage(file = "EUROPEMAP3.png")
-        europe_map_image = Label(ecanvas, image = europemap)
-        europe_map_image.photo = europemap
-        europe_map_image.grid(row = 0, column = 0)
 
         self.country_radiobutton_value = StringVar()
         self.country_radiobutton_value.set(self.current_country_index)

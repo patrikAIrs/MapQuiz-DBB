@@ -71,14 +71,15 @@ class Country_Roster (object):
 
             image_file = split_line[4]
             a = image_file.replace("'", "")
-            image_file = a
+            b = a.strip()
+            image_file = b
 
             name = Country_Object(name, place_name_list, x_coord_list, y_coord_list, image_file)
             self.countries_list.append(name)
 
 Country_List = Country_Roster("testing.txt")
 
-print(Country_List.countries_list[0].name)
+print(Country_List.countries_list[0].image_file_name)
 
 
 

@@ -1,7 +1,7 @@
 from tkinter import *
 
 from startsScreen import StartingScreen
-from map_countries import Country_roster, Country_Object
+from map_countries import Country_Roster, Country_Object
 from europe import EuropeScreen
 from america import AmericaScreen
 from asia import AsiaScreen
@@ -24,7 +24,7 @@ class MapQuizManager (object):
         # self.root.attributes ('-alpha', 0.5)
 
         self.root.title ("Selecting Map: ")
-        self.countries_roster = Country_roster ("map_characteristics.txt")
+        self.countries_roster = Country_Roster ("testing.txt")
 
         self.current_screen = StartingScreen(master = self.root, 
                                             map_roster = self.countries_roster,
@@ -45,34 +45,34 @@ class MapQuizManager (object):
         
         if self.selected_country_index == 5:
             self.root.title("America: Press")
-            self.current_screen = AmericaScreen (master = self.root
+            self.current_screen = AmericaScreen (master = self.root, roster = self.countries_roster.countries_list[0]
                                                 ,number_of_attempts = self.end_screen)
 
         elif self.selected_country_index == 7:
             self.root.title("Europe: Press")
-            self.current_screen = EuropeScreen (master = self.root
+            self.current_screen = EuropeScreen (master = self.root, roster = self.countries_roster.countries_list[1]
                                                 ,number_of_attempts = self.end_screen)
 
         elif self.selected_country_index == 9:
             self.root.title("Asia: Press")
-            self.current_screen = AsiaScreen (master = self.root
+            self.current_screen = AsiaScreen (master = self.root, roster = self.countries_roster.countries_list[2]
                                                 ,number_of_attempts = self.end_screen)
         
         elif self.selected_country_index == 10:
             self.root.title("America: Label")
-            self.current_screen = AmericaLabelScreen (master = self.root
+            self.current_screen = AmericaLabelScreen (master = self.root, roster = self.countries_roster.countries_list[0]
                                                 ,number_of_attempts = self.end_screen)
 
         elif self.selected_country_index == 12:
 
             self.root.title("Europe: Label")
-            self.current_screen = EuropeLabelScreen (master = self.root
+            self.current_screen = EuropeLabelScreen (master = self.root, roster = self.countries_roster.countries_list[1]
                                                 ,number_of_attempts = self.end_screen)
 
         elif self.selected_country_index == 14:
 
             self.root.title("Asia: Label")
-            self.current_screen = AsiaLabelScreen (master = self.root
+            self.current_screen = AsiaLabelScreen (master = self.root, roster = self.countries_roster.countries_list[2]
                                               ,number_of_attempts = self.end_screen)
 
         else:

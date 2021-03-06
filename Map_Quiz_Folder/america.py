@@ -3,31 +3,33 @@ from tkinter import ttk
 import random
 
 class AmericaScreen (Frame):
-    def __init__ (self, master, number_of_attempts):
+    def __init__ (self, master, roster, number_of_attempts):
         super(AmericaScreen, self).__init__(master)
+        self.roster = roster
         self.grid()
         self.create_widgets()
         self.number_of_attempts = number_of_attempts
+        
 
 
     def create_widgets(self):
         acanvas = Canvas(self, width = 1830, height = 1080, background = 'gray')
         acanvas.pack(expand = YES, fill = BOTH)
 
-        muricamap = PhotoImage(file = "AMERICANSTATES2.png")
+        muricamap = PhotoImage(file = self.roster.image_file_name)
         amap = Label(acanvas, image = muricamap)
         amap.photo = muricamap
         amap.grid(row = 0, column = 0)
 
         self.number_of_tries = 0
 
-        self.country_list = ["New York", "Oregon", "California", "Montana", "Missouri", "Texas", 
-                             "Minnesota", "Michigan", "Ohio", "Alabama", "Utah", "Kansas", 
-                             "Kentucky", "Florida", "Wyoming", "Virginia", "Iowa", "Illinois", "Oklahoma", 
-                             "Nevada", "Arizona", "Idaho", "North Dakota", "Georgia"]
-        self.x_coordinates = [1580, 215, 160, 565, 1040, 820, 975, 1250, 1350, 1260, 421, 845, 1285, 1451, 570, 1510, 1005, 1145, 878, 264, 386, 368, 794, 1366]
-        self.y_coordinates = [300, 230, 600, 160, 550, 840, 290, 300, 450, 815, 485, 552, 576, 917, 345, 537, 408, 476, 681, 448, 680, 265, 182, 768]
-        self.country_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+        self.country_list = self.roster.place_names
+        self.x_coordinates = self.roster.x_coords
+        self.y_coordinates = self.roster.y_coords
+        self.country_indexes = []
+        for x in range(len(self.country_list)):
+            self.country_indexes.append(x)
+
         self.current_country_index = random.choice(self.country_indexes)
 
         self.country_text = Label(self, text = self.country_list[self.current_country_index], font = "Times 20 bold")
