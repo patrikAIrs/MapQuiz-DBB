@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import ttk
 import random
 
 class AmericaLabelScreen (Frame):
@@ -61,7 +60,7 @@ class AmericaLabelScreen (Frame):
 
         self.exit_button = Button(self, text = "Go Back to Home Screen", command = self.exit,
                                   font = "Times 20 bold", bg = "light blue")
-        acanvas.create_window(362, 846, window = self.exit_button)
+        acanvas.create_window(self.roster.home_screen_x, self.roster.home_screen_y, window = self.exit_button)
 
         self.list_of_remaining_countries = []
         self.list_of_remaining_countries.clear()
@@ -69,8 +68,8 @@ class AmericaLabelScreen (Frame):
         for x in self.country_indexes:
             self.list_of_remaining_countries.append(self.country_list[x])
 
-        self.country_wordbox = Label(self, text = self.list_of_remaining_countries, font = "Times 15 bold")
-        acanvas.create_window(800, 20, window = self.country_wordbox)
+        self.country_wordbox = Label(self, text = self.list_of_remaining_countries, font = "Times 11 bold")
+        acanvas.create_window(self.roster.word_bank_x, self.roster.word_bank_y, window = self.country_wordbox)
 
     def exit(self):
         self.number_of_attempts(69420)

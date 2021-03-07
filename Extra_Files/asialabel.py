@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import ttk
 import random
 
 class AsiaLabelScreen (Frame):

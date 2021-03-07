@@ -16,11 +16,12 @@ class StartingScreen (Frame):
         
         self.map_index = StringVar()
         self.map_index.set(None)
-        self.mode_index = IntVar()
+        self.mode_index = StringVar()
         self.mode_index.set(None)
 
+
         row = 1
-        for x in range(3):
+        for x in range(len(self.map_roster.countries_list)):
             current_map = self.map_roster.countries_list[x]
 
             Label(self, text = "                       ").grid(row = row, column = 1)
@@ -34,19 +35,21 @@ class StartingScreen (Frame):
 
             Radiobutton(self, text = current_map.name, 
                         font = "Times 40 bold", variable = self.map_index, 
-                        value = x, fg = "blue", bg = "light yellow").grid(row = row, column = 3)
+                        value = current_map.name, fg = "blue", bg = "light yellow").grid(row = row, column = 3)
 
-            Radiobutton(self, text = "Press", 
-                        font = "Times 30 bold", variable = self.mode_index, 
-                        value = x + 5, fg = "red", bg = "white").grid(row = row, column = 4)
+            row += 1
+    
+        Radiobutton(self, text = "Press", 
+                    font = "Times 30 bold", variable = self.mode_index, 
+                    value = " Press", fg = "red", bg = "white").grid(row = 2, column = 4)
 
-            Radiobutton(self, text = "Label", 
-                        font = "Times 30 bold", variable = self.mode_index, 
-                        value = x + 10, fg = "red", bg = "white").grid(row = row, column = 5)
+        Radiobutton(self, text = "Label", 
+                    font = "Times 30 bold", variable = self.mode_index, 
+                    value = " Label", fg = "red", bg = "white").grid(row = 2, column = 5)
 
             
 
-            row += 1
+            
 
 
         Label(self, text = " ").grid(row = row + 1, column = 6)
@@ -61,12 +64,12 @@ class StartingScreen (Frame):
 
 
     def exit_game(self):
-        self.map_index.set("100")
-        self.mode_index.set(100)
+        self.map_index.set("None")
+        self.mode_index.set(" Exit")
         self.selected_clicked()
     
     def selected_clicked (self):
-        self.callback_on_selected(int(self.map_index.get()) + self.mode_index.get())
+        self.callback_on_selected(self.map_index.get() + self.mode_index.get())
 
 
 

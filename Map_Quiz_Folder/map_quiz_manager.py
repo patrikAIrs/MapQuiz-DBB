@@ -2,12 +2,8 @@ from tkinter import *
 
 from startsScreen import StartingScreen
 from map_countries import Country_Roster, Country_Object
-from europe import EuropeScreen
 from america import AmericaScreen
-from asia import AsiaScreen
 from EndScreen import EndingScreen
-from europelabel import EuropeLabelScreen
-from asialabel import AsiaLabelScreen
 from americalabel import AmericaLabelScreen
 
 class MapQuizManager (object):
@@ -36,47 +32,33 @@ class MapQuizManager (object):
         # self.root.attributes ('-alpha', 0.5)
 
         self.selected_country_index = selected_country_index
+        self.selected_game_mode = None
 
-        selected_country_index = int (selected_country_index)
 
         self.current_screen.destroy()
 
+        for x in range(len(self.countries_roster.countries_list)):
+            game_type = self.selected_country_index.split(" ")
+            self.selected_game_mode = game_type[1]            
+            if game_type[0] == self.countries_roster.countries_list[x].name:
+                self.selected_country_index = x
+                break
+
 
         
-        if self.selected_country_index == 5:
-            self.root.title("America: Press")
-            self.current_screen = AmericaScreen (master = self.root, roster = self.countries_roster.countries_list[0]
+        if self.selected_game_mode == "Press":
+            self.root.title("%s: %s" % (self.countries_roster.countries_list[self.selected_country_index].name, self.selected_game_mode))
+            self.current_screen = AmericaScreen (master = self.root, roster = self.countries_roster.countries_list[self.selected_country_index]
                                                 ,number_of_attempts = self.end_screen)
 
-        elif self.selected_country_index == 7:
-            self.root.title("Europe: Press")
-            self.current_screen = EuropeScreen (master = self.root, roster = self.countries_roster.countries_list[1]
+        elif self.selected_game_mode == "Label":
+            self.root.title("%s: %s" % (self.countries_roster.countries_list[self.selected_country_index].name, self.selected_game_mode))
+            self.current_screen = AmericaLabelScreen (master = self.root, roster = self.countries_roster.countries_list[self.selected_country_index]
                                                 ,number_of_attempts = self.end_screen)
-
-        elif self.selected_country_index == 9:
-            self.root.title("Asia: Press")
-            self.current_screen = AsiaScreen (master = self.root, roster = self.countries_roster.countries_list[2]
-                                                ,number_of_attempts = self.end_screen)
-        
-        elif self.selected_country_index == 10:
-            self.root.title("America: Label")
-            self.current_screen = AmericaLabelScreen (master = self.root, roster = self.countries_roster.countries_list[0]
-                                                ,number_of_attempts = self.end_screen)
-
-        elif self.selected_country_index == 12:
-
-            self.root.title("Europe: Label")
-            self.current_screen = EuropeLabelScreen (master = self.root, roster = self.countries_roster.countries_list[1]
-                                                ,number_of_attempts = self.end_screen)
-
-        elif self.selected_country_index == 14:
-
-            self.root.title("Asia: Label")
-            self.current_screen = AsiaLabelScreen (master = self.root, roster = self.countries_roster.countries_list[2]
-                                              ,number_of_attempts = self.end_screen)
 
         else:
             self.current_screen.quit()
+
 
     def end_screen(self, number_of_attempts):
 

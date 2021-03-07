@@ -57,7 +57,7 @@ class AmericaScreen (Frame):
 
         self.exit_button = Button(self, text = "Go Back to Home Screen", command = self.exit,
                                   font = "Times 20 bold", bg = "light blue")
-        acanvas.create_window(362, 846, window = self.exit_button)
+        acanvas.create_window(self.roster.home_screen_x, self.roster.home_screen_y, window = self.exit_button)
 
     def exit(self):
         self.number_of_attempts(69420)
