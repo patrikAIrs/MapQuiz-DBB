@@ -20,7 +20,7 @@ class MapQuizManager (object):
         # self.root.attributes ('-alpha', 0.5)
 
         self.root.title ("Selecting Map: ")
-        self.countries_roster = Country_Roster ("testing.txt")
+        self.countries_roster = Country_Roster ("map_characteristics.txt")
 
         self.current_screen = StartingScreen(master = self.root, 
                                             map_roster = self.countries_roster,
